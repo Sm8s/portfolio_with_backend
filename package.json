@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-neon-netlify",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@netlify/functions": "^2.8.1",
+    "@netlify/neon": "^0.6.0"
+  }
+}

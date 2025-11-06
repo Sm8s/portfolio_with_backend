@@ -198,6 +198,56 @@ article.task::before {
     font-weight: bold;
     color: #64ffda;
 }
+
+/* Verstecktes Admin-Logo */
+.admin-logo {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1f4068 0%, #1b1b2f 50%, #64ffda 100%);
+    color: #e6f1ff;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 2000;
+}
+
+.admin-logo:hover,
+.admin-logo:focus-visible {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(100, 255, 218, 0.35);
+    outline: none;
+}
+
+.admin-logo span {
+    pointer-events: none;
+}
+
+.admin-logo-active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    .admin-logo {
+        width: 44px;
+        height: 44px;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 0.8rem;
+    }
+}
 article.task.todo::before {
     content: '⌛';
     color: #ff5c5c;

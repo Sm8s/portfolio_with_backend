@@ -52,5 +52,6 @@ if (isset($_SESSION['user_id'])) {
     <footer class="footer">
         <p>&copy; <?php echo date('Y'); ?> C‑Portfolio. Erstellt für Lern- und Bewerbungszwecke.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

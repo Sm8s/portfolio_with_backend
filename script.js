@@ -35,5 +35,50 @@ function updateProgress() {
 
 // Initial update on page load
 document.addEventListener('DOMContentLoaded', () => {
-  updateProgress();
+  if (typeof updateProgress === 'function') {
+    updateProgress();
+  }
+  initAdminLogo();
 });
+
+function initAdminLogo() {
+  if (!document.body || document.querySelector('.admin-logo')) {
+    return;
+  }
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'admin-logo';
+  button.setAttribute('aria-label', 'Verstecktes Portfolio-Logo');
+  button.setAttribute('title', 'Portfolio-Logo');
+  button.innerHTML = '<span>CP</span>';
+  document.body.appendChild(button);
+
+  let clickCount = 0;
+  let resetTimer;
+
+  const resetClickCount = () => {
+    clickCount = 0;
+    if (resetTimer) {
+      clearTimeout(resetTimer);
+      resetTimer = undefined;
+    }
+  };
+
+  button.addEventListener('click', () => {
+    clickCount += 1;
+    button.classList.add('admin-logo-active');
+    setTimeout(() => button.classList.remove('admin-logo-active'), 150);
+
+    if (resetTimer) {
+      clearTimeout(resetTimer);
+    }
+    resetTimer = setTimeout(resetClickCount, 2000);
+
+    if (clickCount >= 5) {
+      resetClickCount();
+      const adminUrl = new URL('admin/index.php', window.location.href);
+      window.location.href = adminUrl.toString();
+    }
+  });
+}

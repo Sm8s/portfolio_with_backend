@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 69: Pointer auf Pointer</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level13.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 13</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 69. Pointer auf Pointer</h1>
+    <p>Implementiere eine Funktion, die Speicher allokiert und den Pointer ändert.</p>
+    <textarea id='code' class='code-editor'>/*
+ * Task 69: Pointer auf Pointer
+ * Beschreibung: Implementiere eine Funktion, die Speicher allokiert und den Pointer ändert.
+ * Diese Aufgabe ist noch nicht implementiert.
+ */
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    // TODO: Implementieren Sie diese Aufgabe.
+    printf(&quot;Task 69 ist noch nicht implementiert.\n&quot;);
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 13</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_066.html'>66. Funktionspointer-Taschenrechner</a></li>
+<li><a href='task_067.html'>67. Callback-Funktionen</a></li>
+<li><a href='task_068.html'>68. Generic Swap mit void*</a></li>
+<li><a href='task_070.html'>70. Function Pointer Table</a></li>
+<li><a href='task_071.html'>71. qsort() verstehen und nutzen</a></li>
+<li><a href='task_072.html'>72. Pointer-Arithmetik Meisterschaft</a></li>
+<li><a href='task_073.html'>73. Memory Pool Allocator</a></li>
+<li><a href='task_074.html'>74. Const Pointer Varianten verstehen</a></li>
+<li><a href='task_075.html'>75. Pointer vs. Array - Deep Dive</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '069.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

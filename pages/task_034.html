@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 34: Bibliothekssystem</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level7.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 7</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 34. Bibliothekssystem</h1>
+    <p>Erstelle ein Mini-Bibliothekssystem mit Büchern (Titel, Autor, ISBN, Status). Features: Buch ausleihen/zurückgeben, alle Bücher anzeigen, nach Titel suchen.</p>
+    <textarea id='code' class='code-editor'>
+/*
+ * Task 34: Bibliothekssystem
+ * Beschreibung: Dieses Programm implementiert ein einfaches Bibliothekssystem
+ * zur Verwaltung von Buechern. Es erlaubt das Hinzufuegen von Buechern, die
+ * Anzeige aller Buecher, das Ausleihen und Zurueckgeben sowie die Suche
+ * nach Titeln. Zum Zwecke der Übersicht wird eine feste Obergrenze von
+ * 100 Buechern gesetzt.
+ */
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+typedef struct {
+    char titel[100];
+    char autor[100];
+    char isbn[20];
+    int entliehen; // 0 = verfuegbar, 1 = entliehen
+} Buch;
+
+static void add_book(Buch *buecher, int *count) {
+    if (*count &gt;= 100) {
+        printf(&quot;Bibliothek ist voll!
+&quot;);
+        return;
+    }
+    Buch *b = &amp;buecher[*count];
+    printf(&quot;Titel: &quot;);
+    scanf(&quot;%99s&quot;, b-&gt;titel);
+    printf(&quot;Autor: &quot;);
+    scanf(&quot;%99s&quot;, b-&gt;autor);
+    printf(&quot;ISBN: &quot;);
+    scanf(&quot;%19s&quot;, b-&gt;isbn);
+    b-&gt;entliehen = 0;
+    (*count)++;
+}
+
+static void list_books(const Buch *buecher, int count) {
+    for (int i = 0; i &lt; count; i++) {
+        printf(&quot;%d: %s von %s (ISBN: %s) – %s
+&quot;, i, buecher[i].titel, buecher[i].autor,
+               buecher[i].isbn, buecher[i].entliehen ? &quot;entliehen&quot; : &quot;verfuegbar&quot;);
+    }
+}
+
+static void lend_book(Buch *buecher, int count) {
+    int idx;
+    printf(&quot;Index des Buches ausleihen: &quot;);
+    scanf(&quot;%d&quot;, &amp;idx);
+    if (idx &lt; 0 || idx &gt;= count) {
+        printf(&quot;Ungueltiger Index!
+&quot;);
+        return;
+    }
+    if (buecher[idx].entliehen) {
+        printf(&quot;Buch ist bereits entliehen.
+&quot;);
+    } else {
+        buecher[idx].entliehen = 1;
+        printf(&quot;Buch ausgeliehen.
+&quot;);
+    }
+}
+
+static void return_book(Buch *buecher, int count) {
+    int idx;
+    printf(&quot;Index des Buches zurueckgeben: &quot;);
+    scanf(&quot;%d&quot;, &amp;idx);
+    if (idx &lt; 0 || idx &gt;= count) {
+        printf(&quot;Ungueltiger Index!
+&quot;);
+        return;
+    }
+    if (!buecher[idx].entliehen) {
+        printf(&quot;Buch ist nicht entliehen.
+&quot;);
+    } else {
+        buecher[idx].entliehen = 0;
+        printf(&quot;Buch zurueckgegeben.
+&quot;);
+    }
+}
+
+static void search_title(const Buch *buecher, int count) {
+    char query[100];
+    printf(&quot;Titel suchen: &quot;);
+    scanf(&quot;%99s&quot;, query);
+    for (int i = 0; i &lt; count; i++) {
+        if (strstr(buecher[i].titel, query)) {
+            printf(&quot;Gefunden: %d: %s von %s (ISBN: %s) – %s
+&quot;, i, buecher[i].titel, buecher[i].autor,
+                   buecher[i].isbn, buecher[i].entliehen ? &quot;entliehen&quot; : &quot;verfuegbar&quot;);
+        }
+    }
+}
+
+int main(void) {
+    Buch buecher[100];
+    int count = 0;
+    int choice;
+    while (1) {
+        printf(&quot;1: Hinzufuegen | 2: Anzeigen | 3: Ausleihen | 4: Zurueckgeben | 5: Suchen | 0: Ende → &quot;);
+        if (scanf(&quot;%d&quot;, &amp;choice) != 1) break;
+        if (choice == 0) break;
+        if (choice == 1) add_book(buecher, &amp;count);
+        else if (choice == 2) list_books(buecher, count);
+        else if (choice == 3) lend_book(buecher, count);
+        else if (choice == 4) return_book(buecher, count);
+        else if (choice == 5) search_title(buecher, count);
+    }
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 7</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_031.html'>31. Studenten-Verwaltung</a></li>
+<li><a href='task_032.html'>32. Rechteck vs. Kreis</a></li>
+<li><a href='task_033.html'>33. Linked List (verkettete Liste)</a></li>
+<li><a href='task_035.html'>35. Zeitrechner</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '034.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

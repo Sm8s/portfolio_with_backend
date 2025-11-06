@@ -1,0 +1,63 @@
+<!--
+  Event Webpage
+  A simple static webpage that advertises an event. Display the event name,
+  date, location and description. You can extend this page with a map,
+  schedule, speakers list or RSVP form.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event-Webseite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background-color: #005fa3;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .event-details {
+      background-color: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .event-details h2 {
+      margin-top: 0;
+      color: #005fa3;
+    }
+    .event-details p {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Development Event</h1>
+    <p>Ein spannendes Meetup für alle Web-Entwickler</p>
+  </header>
+  <main>
+    <div class="event-details">
+      <h2>Veranstaltungsinformationen</h2>
+      <p><strong>Datum:</strong> 24. April 2025</p>
+      <p><strong>Ort:</strong> Berlin Tech Hub, Friedrichstraße 99</p>
+      <p>Begleite uns für einen Tag voller Vorträge, Workshops und Networking mit anderen Entwicklern. Lerne neue Technologien kennen und tausche dich aus.</p>
+    </div>
+  </main>
+</body>
+</html>

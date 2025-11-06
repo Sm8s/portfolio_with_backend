@@ -1,0 +1,50 @@
+/* Dark Elegant theme */
+:root {
+  --violet: #7c3aed;
+  --violet-2: #a78bfa;
+}
+body.bg-gradient-dark {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.20), transparent),
+              radial-gradient(800px 400px at 90% 10%, rgba(167,139,250,.15), transparent),
+              #0b0b12;
+  min-height: 100vh;
+}
+.glassy {
+  background: rgba(20,20,30,0.7);
+  backdrop-filter: blur(10px);
+}
+.fade-slide-in {
+  animation: fadeSlide .5s ease;
+}
+@keyframes fadeSlide {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  transition: transform .15s ease;
+}
+.btn-violet {
+  --bs-btn-bg: var(--violet);
+  --bs-btn-border-color: var(--violet);
+  --bs-btn-hover-bg: #6d28d9;
+  --bs-btn-hover-border-color: #6d28d9;
+  --bs-btn-color: #fff;
+}
+.badge-violet { background: var(--violet); }
+a { text-decoration: none; }
+table td, table th { vertical-align: middle; }
+textarea.code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+/* Quill Dark Tweaks */
+.ql-toolbar.ql-snow { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); }
+.ql-container.ql-snow { background: rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.08); color: #e6e6ea; }
+.ql-editor { min-height: 260px; }
+.quill-holder { margin-bottom: .5rem; }
+
+
+/* Quill + Media Picker */
+.quill-toolbar { margin-bottom: .5rem; }
+.quill-editor { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08); border-radius: .5rem; }
+.ql-editor { color: #e8e8ee; }

@@ -1,0 +1,7 @@
+Gameplay‑Mechanik Beispiel
+
+**Mechanik:**   Schwerkraft‑Manipulation
+
+In unserem Puzzle‑Plattformer kann der Spieler per Knopfdruck die Schwerkraft umkehren. Normalerweise bewegt er sich auf dem Boden, doch sobald die Schwerkraft invertiert wird, fällt er zur Decke. Dadurch eröffnen sich neue Wege und es müssen Hindernisse überwunden werden, die mit herkömmlichen Sprüngen unerreichbar wären.
+
+**Warum sie Spass macht:**   Diese Mechanik kombiniert Timing und räumliches Denken. Der Spieler muss vorausplanen, wann und wo er die Schwerkraft ändert, um Plattformen, Fallen oder Feinde zu umgehen. Die Möglichkeit, die Welt „auf den Kopf zu stellen“, sorgt für überraschende Momente und kreative Lösungswege.

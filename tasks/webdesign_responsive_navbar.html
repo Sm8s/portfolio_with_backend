@@ -1,0 +1,54 @@
+<!--
+  Responsive Navigation Bar
+  Build a mobile‑friendly navigation bar that collapses into a hamburger menu
+  on small screens. Use CSS media queries to switch between desktop and
+  mobile layouts, and JavaScript to toggle the menu visibility.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navigation Bar</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    .navbar { background-color: #333; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-links a { color: #fff; text-decoration: none; }
+    .hamburger { display: none; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; background-color: #333; }
+    .mobile-menu a { padding: 0.5rem 1rem; border-top: 1px solid #444; }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .mobile-menu { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Meine Website</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">Über</a>
+      <a href="#services">Leistungen</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">Über</a>
+    <a href="#services">Leistungen</a>
+    <a href="#contact">Kontakt</a>
+  </div>
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>

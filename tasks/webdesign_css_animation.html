@@ -1,0 +1,25 @@
+<!--
+  CSS Animation Demo
+  Shows how to use CSS keyframe animations to create interesting effects.
+  Modify the animation properties, durations and keyframes to explore
+  different motion patterns.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation</title>
+  <style>
+    body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #0a192f; }
+    .box { width: 100px; height: 100px; background-color: #64ffda; border-radius: 8px; animation: bounce 2s infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-150px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

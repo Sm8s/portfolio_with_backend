@@ -1,0 +1,17 @@
+Game Design Dokument Beispiel
+
+## Konzept
+Ein 2D‑Abenteuer, in dem ein kleiner Roboter auf einem verlassenen Raumschiff erwacht und herausfinden muss, was mit der Besatzung passiert ist. Der Spieler erkundet verschiedene Bereiche des Schiffs, löst Rätsel und kämpft gegen feindliche Drohnen.
+
+## Spielmechaniken
+* **Erkundung:**  Der Roboter kann laufen, springen und Leitern benutzen. Einige Bereiche sind nur mit bestimmten Upgrades zugänglich.
+* **Kampf:**  Ein einfaches Blaster‑System erlaubt es, Feinde aus sicherer Entfernung zu bekämpfen. Gegner haben unterschiedliche Angriffsmuster.
+* **Rätsel:**  Schalte Türen frei, aktiviere Konsolen in der richtigen Reihenfolge und manipuliere die Schwerkraft.
+
+## Charaktere
+* **Der Roboter (Protagonist):** Hat keine Erinnerungen und sammelt im Laufe des Spiels Upgrades und neue Fähigkeiten.
+* **Zentrale KI:** Führt den Spieler durch Audio‑Logs in die Geschichte ein, ist aber nicht immer vertrauenswürdig.
+* **Feindliche Drohnen:** Verschiedene Typen, von schwachen Patrouillen bis hin zu starken Bossgegnern.
+
+## Levelprogression
+Das Spiel ist in mehrere Abschnitte (Sektoren) unterteilt. Jedes Level endet mit einem Bosskampf. Nach jedem Sektor erhält der Spieler ein Upgrade, das neue Bereiche zugänglich macht (Metroidvania‑Stil). Der Schwierigkeitsgrad steigt kontinuierlich an und fordert den Spieler mit komplexeren Rätseln und stärkeren Gegnern.

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 31: Studenten-Verwaltung</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level7.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 7</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 31. Studenten-Verwaltung</h1>
+    <p>Erstelle eine Struktur Student mit Name, Matrikelnummer und Noten. Verwalte mehrere Studenten, berechne die Durchschnittsnote und finde den besten Studenten.</p>
+    <textarea id='code' class='code-editor'>
+/*
+ * Task 31: Studenten-Verwaltung
+ * Beschreibung: Dieses Programm definiert eine Struktur fuer Studenten und
+ * erlaubt die Verwaltung mehrerer Studenten, einschliesslich der Berechnung
+ * der Durchschnittsnoten und dem Finden des besten Studenten.
+ */
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+typedef struct {
+    char name[50];
+    int matrikel;
+    float grades[10];
+    int grade_count;
+} Student;
+
+static float average(const Student *s) {
+    if (s-&gt;grade_count == 0) return 0.0f;
+    float sum = 0.0f;
+    for (int i = 0; i &lt; s-&gt;grade_count; i++) sum += s-&gt;grades[i];
+    return sum / s-&gt;grade_count;
+}
+
+int main(void) {
+    int n;
+    printf(&quot;Anzahl der Studenten: &quot;);
+    if (scanf(&quot;%d&quot;, &amp;n) != 1 || n &lt;= 0 || n &gt; 50) return 0;
+    Student students[50];
+    for (int i = 0; i &lt; n; i++) {
+        printf(&quot;Student %d Name: &quot;, i + 1);
+        scanf(&quot;%s&quot;, students[i].name);
+        printf(&quot;Matrikelnummer: &quot;);
+        scanf(&quot;%d&quot;, &amp;students[i].matrikel);
+        printf(&quot;Anzahl der Noten: &quot;);
+        scanf(&quot;%d&quot;, &amp;students[i].grade_count);
+        for (int j = 0; j &lt; students[i].grade_count; j++) {
+            printf(&quot;Note %d: &quot;, j + 1);
+            scanf(&quot;%f&quot;, &amp;students[i].grades[j]);
+        }
+    }
+    // Durchschnitt berechnen und besten Studenten finden
+    int best_index = 0;
+    float best_avg = average(&amp;students[0]);
+    for (int i = 1; i &lt; n; i++) {
+        float avg = average(&amp;students[i]);
+        if (avg &gt; best_avg) {
+            best_avg = avg;
+            best_index = i;
+        }
+    }
+    printf(&quot;Bester Student: %s (Matrikel %d) mit Durchschnitt %.2f
+&quot;,
+           students[best_index].name, students[best_index].matrikel, best_avg);
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 7</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_032.html'>32. Rechteck vs. Kreis</a></li>
+<li><a href='task_033.html'>33. Linked List (verkettete Liste)</a></li>
+<li><a href='task_034.html'>34. Bibliothekssystem</a></li>
+<li><a href='task_035.html'>35. Zeitrechner</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '031.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

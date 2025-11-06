@@ -1,0 +1,47 @@
+<!--
+  Image Carousel
+  A simple image carousel using CSS and a bit of JavaScript to cycle through
+  images. Extend this with controls, indicators or autoplay as you learn
+  more about front‑end development.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bild‑Karussell</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #222; color: #fff; }
+    .carousel { position: relative; max-width: 600px; margin: 2rem auto; overflow: hidden; border-radius: 6px; }
+    .slides { display: flex; transition: transform 0.5s ease-in-out; }
+    .slide { min-width: 100%; }
+    .slide img { width: 100%; display: block; }
+    .controls { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); }
+    .controls button { background-color: rgba(0,0,0,0.5); border: none; color: #fff; padding: 0.5rem 1rem; cursor: pointer; font-size: 1.5rem; }
+    .controls button:hover { background-color: rgba(0,0,0,0.8); }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="slides" id="slides">
+      <div class="slide"><img src="https://via.placeholder.com/600x300/007acc/ffffff?text=Bild+1" alt="Bild 1"></div>
+      <div class="slide"><img src="https://via.placeholder.com/600x300/005fa3/ffffff?text=Bild+2" alt="Bild 2"></div>
+      <div class="slide"><img src="https://via.placeholder.com/600x300/004a85/ffffff?text=Bild+3" alt="Bild 3"></div>
+    </div>
+    <div class="controls">
+      <button onclick="prevSlide()">‹</button>
+      <button onclick="nextSlide()">›</button>
+    </div>
+  </div>
+  <script>
+    let index = 0;
+    const slides = document.getElementById('slides');
+    function showSlide(i) {
+      index = (i + 3) % 3; // wrap around for 3 slides
+      slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+    }
+    function nextSlide() { showSlide(index + 1); }
+    function prevSlide() { showSlide(index - 1); }
+  </script>
+</body>
+</html>

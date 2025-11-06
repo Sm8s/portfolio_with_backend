@@ -1,0 +1,108 @@
+<!--
+  Multi‑Step Progress Bar
+  A simple demonstration of a multi‑step progress bar. Clicking the button
+  advances the progress to the next step. You can enhance this by
+  synchronising form pages or wizard steps with the bar.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi‑Step Progress Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+    #progressContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+    .step::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background-color: #ddd;
+      z-index: -1;
+    }
+    .step:first-child::before {
+      left: 50%;
+      width: 50%;
+    }
+    .step:last-child::before {
+      width: 50%;
+    }
+    .circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: auto;
+      line-height: 30px;
+      color: #fff;
+    }
+    .step.active .circle,
+    .step.completed .circle {
+      background-color: #28a745;
+    }
+    .step.completed .circle {
+      background-color: #007acc;
+    }
+    button {
+      display: block;
+      margin: auto;
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <div id="progressContainer">
+    <div class="step active" data-step="1">
+      <div class="circle">1</div>
+    </div>
+    <div class="step" data-step="2">
+      <div class="circle">2</div>
+    </div>
+    <div class="step" data-step="3">
+      <div class="circle">3</div>
+    </div>
+    <div class="step" data-step="4">
+      <div class="circle">4</div>
+    </div>
+  </div>
+  <button id="nextBtn">Nächster Schritt</button>
+  <script>
+    const steps = document.querySelectorAll('.step');
+    let currentStep = 1;
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (currentStep < steps.length) {
+        steps[currentStep - 1].classList.remove('active');
+        steps[currentStep - 1].classList.add('completed');
+        steps[currentStep].classList.add('active');
+        currentStep++;
+      }
+    });
+  </script>
+</body>
+</html>

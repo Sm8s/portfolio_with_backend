@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 33: Linked List (verkettete Liste)</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level7.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 7</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 33. Linked List (verkettete Liste)</h1>
+    <p>Implementiere eine einfache verkettete Liste mit struct Node. Operationen: Einfügen, Löschen, Ausgeben.</p>
+    <textarea id='code' class='code-editor'>
+/*
+ * Task 33: Linked List
+ * Beschreibung: Dieses Programm implementiert eine einfache singly linked list
+ * mit Einfuegen am Ende, Loeschen nach Wert und Ausgeben der Liste.
+ */
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct Node {
+    int data;
+    struct Node *next;
+} Node;
+
+static void print_list(const Node *head) {
+    const Node *cur = head;
+    while (cur) {
+        printf(&quot;%d -&gt; &quot;, cur-&gt;data);
+        cur = cur-&gt;next;
+    }
+    printf(&quot;NULL
+&quot;);
+}
+
+static void push_back(Node **head, int value) {
+    Node *new_node = malloc(sizeof(Node));
+    new_node-&gt;data = value;
+    new_node-&gt;next = NULL;
+    if (!*head) {
+        *head = new_node;
+        return;
+    }
+    Node *cur = *head;
+    while (cur-&gt;next) cur = cur-&gt;next;
+    cur-&gt;next = new_node;
+}
+
+static void delete_value(Node **head, int value) {
+    Node *cur = *head, *prev = NULL;
+    while (cur) {
+        if (cur-&gt;data == value) {
+            if (prev) prev-&gt;next = cur-&gt;next;
+            else *head = cur-&gt;next;
+            free(cur);
+            return;
+        }
+        prev = cur;
+        cur = cur-&gt;next;
+    }
+}
+
+int main(void) {
+    Node *head = NULL;
+    int choice;
+    while (1) {
+        printf(&quot;1: Einfuegen | 2: Loeschen | 3: Ausgeben | 0: Ende → &quot;);
+        if (scanf(&quot;%d&quot;, &amp;choice) != 1) break;
+        if (choice == 0) break;
+        if (choice == 1) {
+            int value;
+            printf(&quot;Wert einfuegen: &quot;);
+            scanf(&quot;%d&quot;, &amp;value);
+            push_back(&amp;head, value);
+        } else if (choice == 2) {
+            int value;
+            printf(&quot;Wert loeschen: &quot;);
+            scanf(&quot;%d&quot;, &amp;value);
+            delete_value(&amp;head, value);
+        } else if (choice == 3) {
+            print_list(head);
+        }
+    }
+    // Liste freigeben
+    Node *cur = head;
+    while (cur) {
+        Node *next = cur-&gt;next;
+        free(cur);
+        cur = next;
+    }
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 7</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_031.html'>31. Studenten-Verwaltung</a></li>
+<li><a href='task_032.html'>32. Rechteck vs. Kreis</a></li>
+<li><a href='task_034.html'>34. Bibliothekssystem</a></li>
+<li><a href='task_035.html'>35. Zeitrechner</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '033.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

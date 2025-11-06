@@ -1,0 +1,54 @@
+<!--
+  Preis‑Bereich‑Slider
+  This example uses the HTML5 range input to allow users to select a price.
+  JavaScript updates the displayed value in real time. Extend this example by
+  adding currency formatting or min/max labels.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preis Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f6f6f6;
+    }
+    .slider-container {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input[type=range] {
+      width: 100%;
+    }
+    .value-display {
+      font-size: 2rem;
+      margin-top: 1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <h1>Wähle deinen Preis</h1>
+    <input type="range" id="priceSlider" min="0" max="1000" value="500">
+    <div class="value-display" id="priceDisplay">500 €</div>
+  </div>
+  <script>
+    const slider = document.getElementById('priceSlider');
+    const display = document.getElementById('priceDisplay');
+    function updateValue() {
+      display.textContent = slider.value + ' €';
+    }
+    slider.addEventListener('input', updateValue);
+    updateValue();
+  </script>
+</body>
+</html>

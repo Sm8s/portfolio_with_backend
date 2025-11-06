@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>C-Programmierung Portfolio</title>
+  <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+  <header>
+    <div class="hero-content">
+      <h1>C‑Programmierung Portfolio</h1>
+      <p>Alle 135 Übungsaufgaben – strukturiert nach Leveln. Bearbeite die Aufgaben direkt im Browser und nutze die Suche, um schnell deine nächste Challenge zu finden. Abgeschlossene Aufgaben sind grün markiert.</p>
+      <input type="text" id="search" placeholder="Suchen…" oninput="filterTasks()">
+    </div>
+  </header>
+
+  <!-- Fortschrittsanzeige -->
+  <div id="progress-section">
+    <div id="progress-bar-background">
+      <div id="progress-bar-fill"></div>
+    </div>
+    <p id="progress-text"></p>
+  </div>
+  <main id='tasks-container'>
+    <section class='level'><h2><a href='level1.html'>Level 1</a></h2>
+      <article class='task completed' data-title='fibonacci-generator'>
+        <h3>1. Fibonacci-Generator</h3>
+        <p>Schreibe ein Programm, das die ersten N Fibonacci-Zahlen berechnet und ausgibt. Beispiel: Bei N=7 → 0, 1, 1, 2, 3, 5, 8.</p>
+        <a href='pages/task_001.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='primzahl-checker'>
+        <h3>2. Primzahl-Checker</h3>
+        <p>Erstelle ein Programm, das prüft, ob eine eingegebene Zahl eine Primzahl ist. Eine Primzahl ist nur durch 1 und sich selbst teilbar.</p>
+        <a href='pages/task_002.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='palindrom-prüfer'>
+        <h3>3. Palindrom-Prüfer</h3>
+        <p>Prüfe, ob ein eingegebenes Wort ein Palindrom ist (vorwärts = rückwärts gleich).</p>
+        <a href='pages/task_003.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='zahlen-raten-spiel'>
+        <h3>4. Zahlen-Raten-Spiel</h3>
+        <p>Programmiere ein Ratespiel: Der Computer wählt eine Zufallszahl (1-100) und der Spieler muss raten. Der Spieler erhält Hinweise 'Zu hoch!' oder 'Zu niedrig!' und die Anzahl der Versuche wird gezählt.</p>
+        <a href='pages/task_004.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='caesar-verschlüsselung'>
+        <h3>5. Caesar-Verschlüsselung</h3>
+        <p>Implementiere die Caesar-Verschlüsselung: Buchstaben werden um N Positionen verschoben. Beispiel: 'HALLO' mit Verschiebung 3 → 'KDOOR'.</p>
+        <a href='pages/task_005.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level2.html'>Level 2</a></h2>
+      <article class='task completed' data-title='wörter zählen'>
+        <h3>6. Wörter zählen</h3>
+        <p>Zähle die Anzahl der Wörter in einem eingegebenen Satz. Mehrfache Leerzeichen sollen ignoriert werden.</p>
+        <a href='pages/task_006.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='string umkehren'>
+        <h3>7. String umkehren</h3>
+        <p>Kehre einen String um, ohne zusätzliches Array zu verwenden (in-place). Beispiel: 'Programm' → 'mmargorP'.</p>
+        <a href='pages/task_007.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='anagramm-checker'>
+        <h3>8. Anagramm-Checker</h3>
+        <p>Prüfe, ob zwei eingegebene Wörter Anagramme sind (gleiche Buchstaben, andere Reihenfolge).</p>
+        <a href='pages/task_008.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='vokal-zähler'>
+        <h3>9. Vokal-Zähler</h3>
+        <p>Zähle alle Vokale (a, e, i, o, u) in einem Text. Bonus: Unterscheide zwischen Groß- und Kleinschreibung.</p>
+        <a href='pages/task_009.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='längstes wort im satz finden'>
+        <h3>10. Längstes Wort im Satz finden</h3>
+        <p>Finde das längste Wort in einem Satz und gib es aus. Beispiel: 'Die Programmierung macht Spaß' → 'Programmierung'.</p>
+        <a href='pages/task_010.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level3.html'>Level 3</a></h2>
+      <article class='task completed' data-title='array sortieren (bubble sort)'>
+        <h3>11. Array sortieren (Bubble Sort)</h3>
+        <p>Implementiere Bubble Sort zum Sortieren eines Arrays. Gib nach jedem Durchlauf den Array-Zustand aus.</p>
+        <a href='pages/task_011.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='duplikate entfernen'>
+        <h3>12. Duplikate entfernen</h3>
+        <p>Entferne alle doppelten Werte aus einem Array. Gib das Array ohne Duplikate aus.</p>
+        <a href='pages/task_012.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='zwei arrays verschmelzen'>
+        <h3>13. Zwei Arrays verschmelzen</h3>
+        <p>Verschmelze zwei sortierte Arrays zu einem sortierten Array.</p>
+        <a href='pages/task_013.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='array rotieren'>
+        <h3>14. Array rotieren</h3>
+        <p>Rotiere ein Array um K Positionen nach rechts. Beispiel: [1, 2, 3, 4, 5] um 2 rotiert → [4, 5, 1, 2, 3].</p>
+        <a href='pages/task_014.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='zweithöchstes element finden'>
+        <h3>15. Zweithöchstes Element finden</h3>
+        <p>Finde das zweithöchste Element in einem Array (ohne Sortierung). Hinweis: Merke dir Maximum und Zweitmaximum gleichzeitig.</p>
+        <a href='pages/task_015.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level4.html'>Level 4</a></h2>
+      <article class='task completed' data-title='matrix transponieren'>
+        <h3>16. Matrix transponieren</h3>
+        <p>Transponiere eine NxM Matrix (Zeilen ↔ Spalten tauschen).</p>
+        <a href='pages/task_016.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='matrix-multiplikation'>
+        <h3>17. Matrix-Multiplikation</h3>
+        <p>Multipliziere zwei Matrizen miteinander. Prüfe, ob die Multiplikation möglich ist (A[m×n] × B[n×p] = C[m×p]).</p>
+        <a href='pages/task_017.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='spirale durch matrix'>
+        <h3>18. Spirale durch Matrix</h3>
+        <p>Gib eine Matrix in Spiralform aus (außen nach innen).</p>
+        <a href='pages/task_018.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='diagonalsummen'>
+        <h3>19. Diagonalsummen</h3>
+        <p>Berechne die Summen beider Diagonalen einer quadratischen Matrix.</p>
+        <a href='pages/task_019.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='magisches quadrat prüfen'>
+        <h3>20. Magisches Quadrat prüfen</h3>
+        <p>Prüfe, ob eine 3×3 Matrix ein magisches Quadrat ist (alle Summen gleich).</p>
+        <a href='pages/task_020.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level5.html'>Level 5</a></h2>
+      <article class='task completed' data-title='fakultät rekursiv'>
+        <h3>21. Fakultät rekursiv</h3>
+        <p>Berechne die Fakultät einer Zahl mit Rekursion. Beispiel: 5! = 120.</p>
+        <a href='pages/task_021.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='ggt (größter gemeinsamer teiler)'>
+        <h3>22. GGT (Größter gemeinsamer Teiler)</h3>
+        <p>Berechne den GGT zweier Zahlen mit dem Euklidischen Algorithmus (rekursiv). Beispiel: GGT(48, 18) = 6.</p>
+        <a href='pages/task_022.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='türme von hanoi'>
+        <h3>23. Türme von Hanoi</h3>
+        <p>Löse das klassische Problem der Türme von Hanoi rekursiv. Bewege N Scheiben von A nach C über B.</p>
+        <a href='pages/task_023.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='binäre suche (rekursiv)'>
+        <h3>24. Binäre Suche (rekursiv)</h3>
+        <p>Implementiere binäre Suche in einem sortierten Array mit Rekursion.</p>
+        <a href='pages/task_024.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='potenz berechnen (schnell)'>
+        <h3>25. Potenz berechnen (schnell)</h3>
+        <p>Berechne x^n effizient mit 'Fast Exponentiation' (rekursiv). Wenn n gerade: x^n = (x^(n/2))^2, sonst: x * x^(n-1).</p>
+        <a href='pages/task_025.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level6.html'>Level 6</a></h2>
+      <article class='task completed' data-title='swap mit pointern'>
+        <h3>26. Swap mit Pointern</h3>
+        <p>Schreibe eine Funktion, die zwei Variablen mit Pointern vertauscht.</p>
+        <a href='pages/task_026.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='array-summe mit pointer'>
+        <h3>27. Array-Summe mit Pointer</h3>
+        <p>Berechne die Summe eines Arrays nur mit Pointer-Arithmetik (kein Index).</p>
+        <a href='pages/task_027.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='string-länge ohne strlen()'>
+        <h3>28. String-Länge ohne strlen()</h3>
+        <p>Implementiere eine eigene strlen()-Funktion mit Pointern.</p>
+        <a href='pages/task_028.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='array umkehren mit pointern'>
+        <h3>29. Array umkehren mit Pointern</h3>
+        <p>Kehre ein Array mit zwei Pointern um (ohne zusätzlichen Speicher).</p>
+        <a href='pages/task_029.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='dynamisches array'>
+        <h3>30. Dynamisches Array</h3>
+        <p>Erstelle ein dynamisches Array mit malloc(), füge Elemente hinzu und gib den Speicher frei.</p>
+        <a href='pages/task_030.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level7.html'>Level 7</a></h2>
+      <article class='task completed' data-title='studenten-verwaltung'>
+        <h3>31. Studenten-Verwaltung</h3>
+        <p>Erstelle eine Struktur Student mit Name, Matrikelnummer und Noten. Verwalte mehrere Studenten, berechne die Durchschnittsnote und finde den besten Studenten.</p>
+        <a href='pages/task_031.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='rechteck vs. kreis'>
+        <h3>32. Rechteck vs. Kreis</h3>
+        <p>Erstelle Strukturen für Rechteck und Kreis. Berechne Fläche und Umfang. Vergleiche, welche Figur die größere Fläche hat.</p>
+        <a href='pages/task_032.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='linked list (verkettete liste)'>
+        <h3>33. Linked List (verkettete Liste)</h3>
+        <p>Implementiere eine einfache verkettete Liste mit struct Node. Operationen: Einfügen, Löschen, Ausgeben.</p>
+        <a href='pages/task_033.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='bibliothekssystem'>
+        <h3>34. Bibliothekssystem</h3>
+        <p>Erstelle ein Mini-Bibliothekssystem mit Büchern (Titel, Autor, ISBN, Status). Features: Buch ausleihen/zurückgeben, alle Bücher anzeigen, nach Titel suchen.</p>
+        <a href='pages/task_034.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task completed' data-title='zeitrechner'>
+        <h3>35. Zeitrechner</h3>
+        <p>Erstelle eine Struktur Zeit mit Stunden, Minuten, Sekunden. Funktionen: zwei Zeiten addieren, Zeitdifferenz berechnen, Zeit formatiert ausgeben. Beachte Überläufe (60 Sekunden = 1 Minute).</p>
+        <a href='pages/task_035.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level8.html'>Level 8</a></h2>
+      <article class='task todo' data-title='textdatei zeilenweise einlesen'>
+        <h3>36. Textdatei zeilenweise einlesen</h3>
+        <p>Lies eine Textdatei ein und gib sie nummeriert aus.</p>
+        <a href='pages/task_036.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='wörter in datei zählen'>
+        <h3>37. Wörter in Datei zählen</h3>
+        <p>Zähle Zeilen, Wörter und Zeichen in einer Textdatei.</p>
+        <a href='pages/task_037.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='noten-statistik aus datei'>
+        <h3>38. Noten-Statistik aus Datei</h3>
+        <p>Lies Noten aus einer Datei und berechne Durchschnitt, Beste und Schlechteste.</p>
+        <a href='pages/task_038.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='csv-parser'>
+        <h3>39. CSV-Parser</h3>
+        <p>Parse eine einfache CSV-Datei und gib sie tabellarisch aus.</p>
+        <a href='pages/task_039.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='log-datei schreiben'>
+        <h3>40. Log-Datei schreiben</h3>
+        <p>Schreibe Aktivitäten mit Zeitstempel in eine Log-Datei.</p>
+        <a href='pages/task_040.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level9.html'>Level 9</a></h2>
+      <article class='task todo' data-title='taschenrechner mit menü'>
+        <h3>41. Taschenrechner mit Menü</h3>
+        <p>Erstelle einen Taschenrechner mit Menü (Grundrechenarten, Potenz, Wurzel).</p>
+        <a href='pages/task_041.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='tic-tac-toe'>
+        <h3>42. Tic-Tac-Toe</h3>
+        <p>Programmiere Tic-Tac-Toe für zwei Spieler.</p>
+        <a href='pages/task_042.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='kontaktbuch'>
+        <h3>43. Kontaktbuch</h3>
+        <p>Erstelle ein Kontaktbuch mit Name, Telefon und E-Mail.</p>
+        <a href='pages/task_043.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='hangman'>
+        <h3>44. Hangman</h3>
+        <p>Implementiere das Wort-Rate-Spiel Hangman.</p>
+        <a href='pages/task_044.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='snake-spielfeld'>
+        <h3>45. Snake-Spielfeld</h3>
+        <p>Simuliere ein einfaches Snake-Spiel im Terminal.</p>
+        <a href='pages/task_045.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level10.html'>Level 10</a></h2>
+      <article class='task todo' data-title='selection sort'>
+        <h3>46. Selection Sort</h3>
+        <p>Implementiere Selection Sort und visualisiere jeden Schritt.</p>
+        <a href='pages/task_046.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='insertion sort'>
+        <h3>47. Insertion Sort</h3>
+        <p>Implementiere Insertion Sort.</p>
+        <a href='pages/task_047.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='linear search vs. binary search'>
+        <h3>48. Linear Search vs. Binary Search</h3>
+        <p>Implementiere beide Suchalgorithmen und vergleiche die Laufzeit.</p>
+        <a href='pages/task_048.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='merge sort'>
+        <h3>49. Merge Sort</h3>
+        <p>Implementiere den rekursiven Merge Sort Algorithmus.</p>
+        <a href='pages/task_049.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='quick sort'>
+        <h3>50. Quick Sort</h3>
+        <p>Implementiere Quick Sort mit Wahl eines Pivotelements.</p>
+        <a href='pages/task_050.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level11.html'>Level 11</a></h2>
+      <article class='task todo' data-title='sudoku-löser'>
+        <h3>51. Sudoku-Löser</h3>
+        <p>Schreibe ein Programm, das ein 9×9 Sudoku löst (Backtracking).</p>
+        <a href='pages/task_051.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='huffman-kodierung'>
+        <h3>52. Huffman-Kodierung</h3>
+        <p>Implementiere Huffman-Kodierung zur Datenkompression.</p>
+        <a href='pages/task_052.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='a*-pathfinding'>
+        <h3>53. A*-Pathfinding</h3>
+        <p>Finde den kürzesten Weg in einem Labyrinth mit dem A*-Algorithmus.</p>
+        <a href='pages/task_053.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='mini-datenbank'>
+        <h3>54. Mini-Datenbank</h3>
+        <p>Erstelle eine einfache Datenbank mit CRUD-Operationen.</p>
+        <a href='pages/task_054.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='eigener interpreter'>
+        <h3>55. Eigener Interpreter</h3>
+        <p>Schreibe einen Mini-Interpreter für einfache mathematische Ausdrücke.</p>
+        <a href='pages/task_055.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level12.html'>Level 12</a></h2>
+      <article class='task todo' data-title='bit-zähler'>
+        <h3>56. Bit-Zähler</h3>
+        <p>Zähle die Anzahl der gesetzten Bits (1en) in einer Zahl.</p>
+        <a href='pages/task_056.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='potenz von 2 prüfen'>
+        <h3>57. Potenz von 2 prüfen</h3>
+        <p>Prüfe mit nur einer Bit-Operation, ob eine Zahl eine Potenz von 2 ist.</p>
+        <a href='pages/task_057.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='bit-swap'>
+        <h3>58. Bit-Swap</h3>
+        <p>Vertausche die Werte zweier Variablen ohne temporäre Variable (nur mit XOR).</p>
+        <a href='pages/task_058.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='n-tes bit umschalten'>
+        <h3>59. N-tes Bit umschalten</h3>
+        <p>Schreibe Funktionen: setBit(), clearBit(), toggleBit(), checkBit().</p>
+        <a href='pages/task_059.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='byte-swapping'>
+        <h3>60. Byte-Swapping</h3>
+        <p>Kehre die Byte-Reihenfolge einer 32-Bit Zahl um (Endianness-Konvertierung).</p>
+        <a href='pages/task_060.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='gray-code generator'>
+        <h3>61. Gray-Code Generator</h3>
+        <p>Generiere die ersten N Gray-Code Zahlen.</p>
+        <a href='pages/task_061.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='einzelnes fehlendes bit finden'>
+        <h3>62. Einzelnes fehlendes Bit finden</h3>
+        <p>Finde die fehlende Zahl in einem Array 0–N mittels XOR.</p>
+        <a href='pages/task_062.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='bitfeld-struktur'>
+        <h3>63. Bitfeld-Struktur</h3>
+        <p>Erstelle eine Struktur mit Bitfeldern für Flags.</p>
+        <a href='pages/task_063.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='bit-rotation'>
+        <h3>64. Bit-Rotation</h3>
+        <p>Implementiere Links- und Rechts-Rotation von Bits.</p>
+        <a href='pages/task_064.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='bit-reversal'>
+        <h3>65. Bit-Reversal</h3>
+        <p>Kehre alle Bits einer Zahl um.</p>
+        <a href='pages/task_065.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level13.html'>Level 13</a></h2>
+      <article class='task todo' data-title='funktionspointer-taschenrechner'>
+        <h3>66. Funktionspointer-Taschenrechner</h3>
+        <p>Implementiere einen Taschenrechner mit Array von Funktionspointern.</p>
+        <a href='pages/task_066.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='callback-funktionen'>
+        <h3>67. Callback-Funktionen</h3>
+        <p>Implementiere eine forEach()-Funktion für Arrays mit Callback.</p>
+        <a href='pages/task_067.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='generic swap mit void*'>
+        <h3>68. Generic Swap mit void*</h3>
+        <p>Schreibe eine universelle Swap-Funktion mit void*-Zeigern.</p>
+        <a href='pages/task_068.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='pointer auf pointer'>
+        <h3>69. Pointer auf Pointer</h3>
+        <p>Implementiere eine Funktion, die Speicher allokiert und den Pointer ändert.</p>
+        <a href='pages/task_069.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='function pointer table'>
+        <h3>70. Function Pointer Table</h3>
+        <p>Erstelle ein Command-Pattern mit Function Pointer Table.</p>
+        <a href='pages/task_070.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='qsort() verstehen und nutzen'>
+        <h3>71. qsort() verstehen und nutzen</h3>
+        <p>Nutze qsort() mit eigener Compare-Funktion.</p>
+        <a href='pages/task_071.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='pointer-arithmetik meisterschaft'>
+        <h3>72. Pointer-Arithmetik Meisterschaft</h3>
+        <p>Navigiere durch ein 2D-Array nur mit Pointer-Arithmetik.</p>
+        <a href='pages/task_072.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='memory pool allocator'>
+        <h3>73. Memory Pool Allocator</h3>
+        <p>Implementiere einen einfachen Memory Pool für schnelle Allokationen.</p>
+        <a href='pages/task_073.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='const pointer varianten verstehen'>
+        <h3>74. Const Pointer Varianten verstehen</h3>
+        <p>Demonstriere alle Varianten von const Pointer.</p>
+        <a href='pages/task_074.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='pointer vs. array - deep dive'>
+        <h3>75. Pointer vs. Array - Deep Dive</h3>
+        <p>Zeige die Unterschiede zwischen int arr[] und int *ptr.</p>
+        <a href='pages/task_075.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level14.html'>Level 14</a></h2>
+      <article class='task todo' data-title='stack (lifo) implementieren'>
+        <h3>76. Stack (LIFO) implementieren</h3>
+        <p>Implementiere einen Stack mit Array und mit Linked List.</p>
+        <a href='pages/task_076.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='queue (fifo) implementieren'>
+        <h3>77. Queue (FIFO) implementieren</h3>
+        <p>Implementiere eine Queue als Ringpuffer.</p>
+        <a href='pages/task_077.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='priority queue'>
+        <h3>78. Priority Queue</h3>
+        <p>Implementiere eine Priority Queue mit Binary Heap.</p>
+        <a href='pages/task_078.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='doubly linked list'>
+        <h3>79. Doubly Linked List</h3>
+        <p>Erweitere eine Linked List zu einer doppelt verketteten Liste.</p>
+        <a href='pages/task_079.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='binary search tree (bst)'>
+        <h3>80. Binary Search Tree (BST)</h3>
+        <p>Implementiere einen binären Suchbaum.</p>
+        <a href='pages/task_080.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='hash table'>
+        <h3>81. Hash Table</h3>
+        <p>Implementiere eine Hash Table mit Chaining.</p>
+        <a href='pages/task_081.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='trie (prefix tree)'>
+        <h3>82. Trie (Prefix Tree)</h3>
+        <p>Implementiere einen Trie für schnelle String-Suche.</p>
+        <a href='pages/task_082.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='graph mit adjacency matrix'>
+        <h3>83. Graph mit Adjacency Matrix</h3>
+        <p>Repräsentiere einen Graphen mit einer Adjazenzmatrix.</p>
+        <a href='pages/task_083.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='graph mit adjacency list'>
+        <h3>84. Graph mit Adjacency List</h3>
+        <p>Repräsentiere einen Graphen mit einer Adjazenzliste.</p>
+        <a href='pages/task_084.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='union-find (disjoint set)'>
+        <h3>85. Union-Find (Disjoint Set)</h3>
+        <p>Implementiere die Union-Find Datenstruktur.</p>
+        <a href='pages/task_085.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level15.html'>Level 15</a></h2>
+      <article class='task todo' data-title='dijkstra's shortest path'>
+        <h3>86. Dijkstra's Shortest Path</h3>
+        <p>Finde den kürzesten Pfad in einem gewichteten Graphen.</p>
+        <a href='pages/task_086.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='floyd-warshall'>
+        <h3>87. Floyd-Warshall</h3>
+        <p>Berechne kürzeste Pfade zwischen allen Knotenpaaren.</p>
+        <a href='pages/task_087.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='kruskal's mst'>
+        <h3>88. Kruskal's MST</h3>
+        <p>Finde den minimalen Spannbaum mit Kruskal's Algorithmus.</p>
+        <a href='pages/task_088.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='knapsack problem (0/1)'>
+        <h3>89. Knapsack Problem (0/1)</h3>
+        <p>Löse das Rucksackproblem mit Dynamic Programming.</p>
+        <a href='pages/task_089.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='longest common subsequence (lcs)'>
+        <h3>90. Longest Common Subsequence (LCS)</h3>
+        <p>Finde die längste gemeinsame Teilsequenz zweier Strings.</p>
+        <a href='pages/task_090.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='edit distance (levenshtein)'>
+        <h3>91. Edit Distance (Levenshtein)</h3>
+        <p>Berechne die Editier-Distanz zwischen zwei Strings.</p>
+        <a href='pages/task_091.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='rabin-karp string matching'>
+        <h3>92. Rabin-Karp String Matching</h3>
+        <p>Finde ein Pattern in Text mittels Rolling Hash.</p>
+        <a href='pages/task_092.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='kmp (knuth-morris-pratt)'>
+        <h3>93. KMP (Knuth-Morris-Pratt)</h3>
+        <p>Implementiere KMP Pattern Matching.</p>
+        <a href='pages/task_093.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='boyer-moore string search'>
+        <h3>94. Boyer-Moore String Search</h3>
+        <p>Implementiere Boyer-Moore Algorithmus.</p>
+        <a href='pages/task_094.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='topological sort'>
+        <h3>95. Topological Sort</h3>
+        <p>Sortiere einen DAG topologisch.</p>
+        <a href='pages/task_095.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level16.html'>Level 16</a></h2>
+      <article class='task todo' data-title='multi-threaded prime finder'>
+        <h3>96. Multi-threaded Prime Finder</h3>
+        <p>Finde Primzahlen parallel mit pthreads.</p>
+        <a href='pages/task_096.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='producer-consumer problem'>
+        <h3>97. Producer-Consumer Problem</h3>
+        <p>Implementiere das Producer-Consumer Problem mit Mutex/Condition.</p>
+        <a href='pages/task_097.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='reader-writer lock'>
+        <h3>98. Reader-Writer Lock</h3>
+        <p>Implementiere ein Reader-Writer Lock.</p>
+        <a href='pages/task_098.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='thread pool'>
+        <h3>99. Thread Pool</h3>
+        <p>Implementiere einen einfachen Thread Pool.</p>
+        <a href='pages/task_099.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='dining philosophers'>
+        <h3>100. Dining Philosophers</h3>
+        <p>Löse das Dining Philosophers Problem ohne Deadlock.</p>
+        <a href='pages/task_100.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='eigener malloc()'>
+        <h3>101. Eigener malloc()</h3>
+        <p>Implementiere eine einfache malloc/free Funktion.</p>
+        <a href='pages/task_101.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='memory leak detector'>
+        <h3>102. Memory Leak Detector</h3>
+        <p>Schreibe Wrapper für malloc/free, die Leaks tracken.</p>
+        <a href='pages/task_102.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='reference counting'>
+        <h3>103. Reference Counting</h3>
+        <p>Implementiere Reference Counting für automatisches Memory Management.</p>
+        <a href='pages/task_103.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='stack vs. heap visualizer'>
+        <h3>104. Stack vs. Heap Visualizer</h3>
+        <p>Demonstriere Unterschiede zwischen Stack und Heap.</p>
+        <a href='pages/task_104.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='memory alignment'>
+        <h3>105. Memory Alignment</h3>
+        <p>Demonstriere Memory Alignment und Padding in Strukturen.</p>
+        <a href='pages/task_105.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level17.html'>Level 17</a></h2>
+      <article class='task todo' data-title='fork & exec'>
+        <h3>106. Fork & Exec</h3>
+        <p>Erstelle Child-Prozesse mit fork() und exec().</p>
+        <a href='pages/task_106.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='pipes für ipc'>
+        <h3>107. Pipes für IPC</h3>
+        <p>Kommuniziere zwischen Prozessen mit Pipes.</p>
+        <a href='pages/task_107.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='signal handling'>
+        <h3>108. Signal Handling</h3>
+        <p>Fange Signale ab und reagiere darauf.</p>
+        <a href='pages/task_108.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='shared memory (shm)'>
+        <h3>109. Shared Memory (shm)</h3>
+        <p>Teile Speicher zwischen Prozessen mit shmget/shmat.</p>
+        <a href='pages/task_109.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='memory-mapped files'>
+        <h3>110. Memory-Mapped Files</h3>
+        <p>Mappe Dateien in Speicher mit mmap().</p>
+        <a href='pages/task_110.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='directory walker'>
+        <h3>111. Directory Walker</h3>
+        <p>Durchlaufe Verzeichnisstrukturen rekursiv.</p>
+        <a href='pages/task_111.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='file permissions checker'>
+        <h3>112. File Permissions Checker</h3>
+        <p>Prüfe und ändere Dateirechte programmatisch.</p>
+        <a href='pages/task_112.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='daemon-prozess'>
+        <h3>113. Daemon-Prozess</h3>
+        <p>Erstelle einen Daemon-Prozess im Hintergrund.</p>
+        <a href='pages/task_113.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='simple http server'>
+        <h3>114. Simple HTTP Server</h3>
+        <p>Implementiere einen minimalen HTTP-Server mit Sockets.</p>
+        <a href='pages/task_114.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='tcp chat application'>
+        <h3>115. TCP Chat Application</h3>
+        <p>Erstelle eine Chat-App mit TCP-Sockets.</p>
+        <a href='pages/task_115.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level18.html'>Level 18</a></h2>
+      <article class='task todo' data-title='lexer (tokenizer)'>
+        <h3>116. Lexer (Tokenizer)</h3>
+        <p>Schreibe einen Lexer für eine Mini-Sprache.</p>
+        <a href='pages/task_116.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='recursive descent parser'>
+        <h3>117. Recursive Descent Parser</h3>
+        <p>Parse arithmetische Ausdrücke mit Rekursion.</p>
+        <a href='pages/task_117.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='rpn calculator'>
+        <h3>118. RPN Calculator</h3>
+        <p>Implementiere einen Postfix-Evaluator.</p>
+        <a href='pages/task_118.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='infix zu postfix converter'>
+        <h3>119. Infix zu Postfix Converter</h3>
+        <p>Konvertiere Infix- zu Postfix-Notation.</p>
+        <a href='pages/task_119.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='mini-interpreter mit variablen'>
+        <h3>120. Mini-Interpreter mit Variablen</h3>
+        <p>Erweitere den Calculator um Variablen-Zuweisung.</p>
+        <a href='pages/task_120.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level19.html'>Level 19</a></h2>
+      <article class='task todo' data-title='xor-verschlüsselung'>
+        <h3>121. XOR-Verschlüsselung</h3>
+        <p>Implementiere eine einfache XOR-Cipher.</p>
+        <a href='pages/task_121.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='rot13'>
+        <h3>122. ROT13</h3>
+        <p>Implementiere ROT13 (Caesar mit Shift 13).</p>
+        <a href='pages/task_122.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='base64 encoder/decoder'>
+        <h3>123. Base64 Encoder/Decoder</h3>
+        <p>Implementiere Base64 Encoding und Decoding.</p>
+        <a href='pages/task_123.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='einfacher hash (djb2)'>
+        <h3>124. Einfacher Hash (DJB2)</h3>
+        <p>Implementiere die DJB2 Hash-Funktion.</p>
+        <a href='pages/task_124.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='md5 implementieren'>
+        <h3>125. MD5 implementieren</h3>
+        <p>Implementiere den MD5 Algorithmus.</p>
+        <a href='pages/task_125.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level20.html'>Level 20</a></h2>
+      <article class='task todo' data-title='cache-friendly code'>
+        <h3>126. Cache-Friendly Code</h3>
+        <p>Demonstriere Cache-Effekte bei Matrix-Traversierung.</p>
+        <a href='pages/task_126.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='simd mit sse'>
+        <h3>127. SIMD mit SSE</h3>
+        <p>Nutze SIMD-Instruktionen fuer parallele Berechnungen.</p>
+        <a href='pages/task_127.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='branch prediction optimization'>
+        <h3>128. Branch Prediction Optimization</h3>
+        <p>Demonstriere Auswirkungen der Branch Prediction.</p>
+        <a href='pages/task_128.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='loop unrolling'>
+        <h3>129. Loop Unrolling</h3>
+        <p>Optimiere Schleifen durch Loop Unrolling.</p>
+        <a href='pages/task_129.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='profiling mit gprof'>
+        <h3>130. Profiling mit gprof</h3>
+        <p>Profile den Code und optimiere Hotspots.</p>
+        <a href='pages/task_130.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+    <section class='level'><h2><a href='level21.html'>Level 21</a></h2>
+      <article class='task todo' data-title='virtuelle maschine (vm)'>
+        <h3>131. Virtuelle Maschine (VM)</h3>
+        <p>Implementiere eine Stack-basierte VM.</p>
+        <a href='pages/task_131.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='garbage collector'>
+        <h3>132. Garbage Collector</h3>
+        <p>Implementiere einen einfachen Mark-and-Sweep GC.</p>
+        <a href='pages/task_132.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='jit compiler (basic)'>
+        <h3>133. JIT Compiler (Basic)</h3>
+        <p>Generiere x86-Maschinencode zur Laufzeit.</p>
+        <a href='pages/task_133.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='betriebssystem-kernel (mini)'>
+        <h3>134. Betriebssystem-Kernel (Mini)</h3>
+        <p>Schreibe einen minimalen Bootloader und Kernel.</p>
+        <a href='pages/task_134.html'>Aufgabe bearbeiten</a>
+      </article>
+      <article class='task todo' data-title='regex engine'>
+        <h3>135. Regex Engine</h3>
+        <p>Implementiere eine Regex-Engine (Thompson NFA).</p>
+        <a href='pages/task_135.html'>Aufgabe bearbeiten</a>
+      </article>
+    </section>
+  </main>
+  <script src='script.js'></script>
+</body>
+</html>

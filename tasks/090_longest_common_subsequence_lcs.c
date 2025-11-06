@@ -1,0 +1,12 @@
+/*
+ * Task 90: Longest Common Subsequence (LCS)
+ * Beschreibung: Finde die längste gemeinsame Teilsequenz zweier Strings.
+ * Diese Aufgabe ist noch nicht implementiert.
+ */
+#include <stdio.h>
+
+int main(void) {
+    // TODO: Implementieren Sie diese Aufgabe.
+    printf("Task 90 ist noch nicht implementiert.\n");
+    return 0;
+}

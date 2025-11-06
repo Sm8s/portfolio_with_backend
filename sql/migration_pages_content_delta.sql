@@ -1,0 +1,3 @@
+
+USE c_portfolio;
+ALTER TABLE pages ADD COLUMN IF NOT EXISTS content_delta MEDIUMTEXT NULL;

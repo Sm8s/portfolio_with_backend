@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 112: File Permissions Checker</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level17.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 17</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 112. File Permissions Checker</h1>
+    <p>Prüfe und ändere Dateirechte programmatisch.</p>
+    <textarea id='code' class='code-editor'>/*
+ * Task 112: File Permissions Checker
+ * Beschreibung: Prüfe und ändere Dateirechte programmatisch.
+ * Diese Aufgabe ist noch nicht implementiert.
+ */
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    // TODO: Implementieren Sie diese Aufgabe.
+    printf(&quot;Task 112 ist noch nicht implementiert.\n&quot;);
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 17</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_106.html'>106. Fork & Exec</a></li>
+<li><a href='task_107.html'>107. Pipes für IPC</a></li>
+<li><a href='task_108.html'>108. Signal Handling</a></li>
+<li><a href='task_109.html'>109. Shared Memory (shm)</a></li>
+<li><a href='task_110.html'>110. Memory-Mapped Files</a></li>
+<li><a href='task_111.html'>111. Directory Walker</a></li>
+<li><a href='task_113.html'>113. Daemon-Prozess</a></li>
+<li><a href='task_114.html'>114. Simple HTTP Server</a></li>
+<li><a href='task_115.html'>115. TCP Chat Application</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '112.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

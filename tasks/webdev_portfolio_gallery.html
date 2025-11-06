@@ -1,0 +1,77 @@
+<!--
+  Portfolio Gallery
+  Displays a responsive grid of images. Each item can include a caption or
+  description. Use CSS Grid to arrange the items and hover effects for
+  interactions. Extend this layout to load images dynamically or filter
+  categories.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Galerie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      padding: 2rem 0;
+      color: #333;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .item {
+      background-color: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      transition: transform 0.2s;
+    }
+    .item:hover {
+      transform: translateY(-4px);
+    }
+    .item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .item .caption {
+      padding: 0.5rem;
+      text-align: center;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Portfolio Galerie</h1>
+  <div class="gallery">
+    <div class="item">
+      <img src="https://via.placeholder.com/300x150" alt="Projekt 1">
+      <div class="caption">Projekt 1</div>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/300x150" alt="Projekt 2">
+      <div class="caption">Projekt 2</div>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/300x150" alt="Projekt 3">
+      <div class="caption">Projekt 3</div>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/300x150" alt="Projekt 4">
+      <div class="caption">Projekt 4</div>
+    </div>
+  </div>
+</body>
+</html>

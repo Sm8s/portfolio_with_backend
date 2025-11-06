@@ -1,0 +1,90 @@
+<!--
+  Webpage with Form
+  This basic example demonstrates how to create a simple survey or contact
+  form using HTML. Extend this file by adding validation, styling and more
+  sophisticated layout techniques.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularseite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f7;
+      padding: 2rem;
+    }
+    form {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+    form h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.25rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #007acc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>Kontaktformular</h1>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E‑Mail‑Adresse</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="option">Lieblingssprache</label>
+    <select id="option" name="option">
+      <option value="c">C</option>
+      <option value="cpp">C++</option>
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+    </select>
+
+    <label>Newsletter abonnieren?</label>
+    <label><input type="checkbox" name="newsletter"> Ja, bitte!</label>
+
+    <label>Geschlecht</label>
+    <label><input type="radio" name="gender" value="m"> Männlich</label>
+    <label><input type="radio" name="gender" value="w"> Weiblich</label>
+    <label><input type="radio" name="gender" value="o"> Divers</label>
+
+    <label for="message">Nachricht</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit">Absenden</button>
+  </form>
+</body>
+</html>

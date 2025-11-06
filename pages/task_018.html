@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 18: Spirale durch Matrix</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level4.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 4</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 18. Spirale durch Matrix</h1>
+    <p>Gib eine Matrix in Spiralform aus (außen nach innen).</p>
+    <textarea id='code' class='code-editor'>
+/*
+ * Task 18: Spirale durch Matrix
+ * Beschreibung: Dieses Programm gibt die Elemente einer quadratischen Matrix
+ * in einer Spirale aus (im Uhrzeigersinn von außen nach innen).
+ */
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n;
+    printf(&quot;Groesse der quadratischen Matrix (n): &quot;);
+    if (scanf(&quot;%d&quot;, &amp;n) != 1 || n &lt;= 0 || n &gt; 10) return 0;
+    int a[10][10];
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            printf(&quot;a[%d][%d] = &quot;, i, j);
+            scanf(&quot;%d&quot;, &amp;a[i][j]);
+        }
+    }
+    int top = 0, bottom = n - 1, left = 0, right = n - 1;
+    printf(&quot;Spirale: &quot;);
+    while (top &lt;= bottom &amp;&amp; left &lt;= right) {
+        for (int j = left; j &lt;= right; j++) printf(&quot;%d &quot;, a[top][j]);
+        top++;
+        for (int i = top; i &lt;= bottom; i++) printf(&quot;%d &quot;, a[i][right]);
+        right--;
+        if (top &lt;= bottom) {
+            for (int j = right; j &gt;= left; j--) printf(&quot;%d &quot;, a[bottom][j]);
+            bottom--;
+        }
+        if (left &lt;= right) {
+            for (int i = bottom; i &gt;= top; i--) printf(&quot;%d &quot;, a[i][left]);
+            left++;
+        }
+    }
+    printf(&quot;
+&quot;);
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 4</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_016.html'>16. Matrix transponieren</a></li>
+<li><a href='task_017.html'>17. Matrix-Multiplikation</a></li>
+<li><a href='task_019.html'>19. Diagonalsummen</a></li>
+<li><a href='task_020.html'>20. Magisches Quadrat prüfen</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '018.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

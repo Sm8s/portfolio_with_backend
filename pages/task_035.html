@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 35: Zeitrechner</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level7.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 7</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 35. Zeitrechner</h1>
+    <p>Erstelle eine Struktur Zeit mit Stunden, Minuten, Sekunden. Funktionen: zwei Zeiten addieren, Zeitdifferenz berechnen, Zeit formatiert ausgeben. Beachte Überläufe (60 Sekunden = 1 Minute).</p>
+    <textarea id='code' class='code-editor'>
+/*
+ * Task 35: Zeitrechner
+ * Beschreibung: Dieses Programm definiert eine Struktur fuer Zeiten und
+ * implementiert Funktionen zum Addieren und Subtrahieren zweier Zeiten.
+ */
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct {
+    int h, m, s;
+} Zeit;
+
+static void print_time(const Zeit *t) {
+    printf(&quot;%02d:%02d:%02d&quot;, t-&gt;h, t-&gt;m, t-&gt;s);
+}
+
+static Zeit add_times(Zeit a, Zeit b) {
+    Zeit res;
+    res.s = a.s + b.s;
+    res.m = a.m + b.m + res.s / 60;
+    res.h = a.h + b.h + res.m / 60;
+    res.s %= 60;
+    res.m %= 60;
+    return res;
+}
+
+static Zeit diff_times(Zeit a, Zeit b) {
+    // Berechne a - b (als Absolutwert)
+    Zeit res;
+    int sec_a = a.h * 3600 + a.m * 60 + a.s;
+    int sec_b = b.h * 3600 + b.m * 60 + b.s;
+    int diff = abs(sec_a - sec_b);
+    res.h = diff / 3600;
+    res.m = (diff % 3600) / 60;
+    res.s = diff % 60;
+    return res;
+}
+
+int main(void) {
+    Zeit t1, t2;
+    printf(&quot;Zeit 1 (h m s): &quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;t1.h, &amp;t1.m, &amp;t1.s);
+    printf(&quot;Zeit 2 (h m s): &quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;t2.h, &amp;t2.m, &amp;t2.s);
+    Zeit sum = add_times(t1, t2);
+    Zeit diff = diff_times(t1, t2);
+    printf(&quot;Summe: &quot;);
+    print_time(&amp;sum);
+    printf(&quot;
+Differenz: &quot;);
+    print_time(&amp;diff);
+    printf(&quot;
+&quot;);
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 7</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_031.html'>31. Studenten-Verwaltung</a></li>
+<li><a href='task_032.html'>32. Rechteck vs. Kreis</a></li>
+<li><a href='task_033.html'>33. Linked List (verkettete Liste)</a></li>
+<li><a href='task_034.html'>34. Bibliothekssystem</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '035.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

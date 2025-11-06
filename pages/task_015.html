@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Task 15: Zweithöchstes Element finden</title>
+  <link rel='stylesheet' href='../style.css'>
+  <style>
+    textarea.code-editor {
+      width: 100%;
+      height: 400px;
+      background-color: #0a192f;
+      color: #ccd6f6;
+      border: 1px solid #233554;
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    .buttons { margin-top: 0.5rem; }
+    .buttons button { margin-right: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #64ffda; color: #0a192f; font-weight: bold; }
+    .buttons button:hover { opacity: 0.9; }
+    ul li { margin-bottom: 0.25rem; }
+    ul li a { color: #64ffda; text-decoration: none; }
+    ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav style="padding: 1rem; text-align:center;">
+    <a href='../index.html' style="color: #64ffda; text-decoration:none; margin-right:1rem;">&larr; Zurück zum Portfolio</a>
+    <a href='../level3.html' style="color: #64ffda; text-decoration:none;">Zurück zu Level 3</a>
+  </nav>
+  <main style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <h1>Task 15. Zweithöchstes Element finden</h1>
+    <p>Finde das zweithöchste Element in einem Array (ohne Sortierung). Hinweis: Merke dir Maximum und Zweitmaximum gleichzeitig.</p>
+    <textarea id='code' class='code-editor'>
+/*
+ * Task 15: Zweithoechstes Element finden
+ * Beschreibung: Dieses Programm findet das zweithöchste Element in einem Array,
+ * ohne das Array zu sortieren. Negative Zahlen werden unterstützt.
+ */
+#include &lt;stdio.h&gt;
+#include &lt;limits.h&gt;
+
+int main(void) {
+    int n;
+    printf(&quot;Laenge des Arrays: &quot;);
+    if (scanf(&quot;%d&quot;, &amp;n) != 1 || n &lt; 2 || n &gt; 200) {
+        printf(&quot;Mindestens zwei Elemente sind erforderlich.
+&quot;);
+        return 0;
+    }
+    int max1 = INT_MIN, max2 = INT_MIN;
+    for (int i = 0; i &lt; n; i++) {
+        int x;
+        printf(&quot;a[%d] = &quot;, i);
+        scanf(&quot;%d&quot;, &amp;x);
+        if (x &gt; max1) {
+            max2 = max1;
+            max1 = x;
+        } else if (x &gt; max2 &amp;&amp; x &lt; max1) {
+            max2 = x;
+        }
+    }
+    if (max2 == INT_MIN) {
+        printf(&quot;Kein eindeutiges Zweitmaximum gefunden (alle Werte gleich?).
+&quot;);
+    } else {
+        printf(&quot;Zweithoechstes Element: %d (Max: %d)
+&quot;, max2, max1);
+    }
+    return 0;
+}
+</textarea>
+    <div class='buttons'>
+      <button onclick="downloadCode()">Code herunterladen</button>
+      <button onclick="copyCode()">Code kopieren</button>
+    </div>
+    <h3>Weitere Aufgaben in Level 3</h3><ul style='list-style: none; padding-left: 0;'><li><a href='task_011.html'>11. Array sortieren (Bubble Sort)</a></li>
+<li><a href='task_012.html'>12. Duplikate entfernen</a></li>
+<li><a href='task_013.html'>13. Zwei Arrays verschmelzen</a></li>
+<li><a href='task_014.html'>14. Array rotieren</a></li>
+</ul>
+  </main>
+  <script>
+    function downloadCode() {
+      var code = document.getElementById('code').value;
+      var blob = new Blob([code], { type: 'text/plain' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = '015.c';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function copyCode() {
+      var codeArea = document.getElementById('code');
+      codeArea.select();
+      document.execCommand('copy');
+      alert('Code in die Zwischenablage kopiert!');
+    }
+  </script>
+</body>
+</html>

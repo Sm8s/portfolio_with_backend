@@ -1,0 +1,101 @@
+<!--
+  Simple Landing Page
+  A modern landing page layout with hero section, features and call‑to‑action.
+  Use Flexbox or CSS Grid to align content responsively. This skeleton can be
+  expanded with additional sections like testimonials, pricing tables, etc.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(135deg, #007acc, #005fa3);
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .feature {
+      background-color: #f8f9fa;
+      border-radius: 6px;
+      padding: 1.5rem;
+      flex: 1 1 300px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .feature h2 {
+      margin-top: 0;
+      color: #007acc;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta button {
+      background-color: #007acc;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .cta button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dein Produkt oder Service</h1>
+    <p>Eine überzeugende Tagline, die deine Besucher anspricht</p>
+    <a href="#cta"><button>Jetzt starten</button></a>
+  </header>
+  <main>
+    <section class="features">
+      <div class="feature">
+        <h2>Eigenschaft 1</h2>
+        <p>Beschreibe hier die erste wichtige Eigenschaft deines Produkts oder Service.</p>
+      </div>
+      <div class="feature">
+        <h2>Eigenschaft 2</h2>
+        <p>Beschreibe hier eine weitere nützliche Eigenschaft mit interessanten Details.</p>
+      </div>
+      <div class="feature">
+        <h2>Eigenschaft 3</h2>
+        <p>Beschreibe hier eine dritte Eigenschaft, die dein Angebot hervorhebt.</p>
+      </div>
+    </section>
+    <section id="cta" class="cta">
+      <h2>Bereit loszulegen?</h2>
+      <p>Klicke auf den Button, um deine Reise zu beginnen.</p>
+      <button>Jetzt registrieren</button>
+    </section>
+  </main>
+</body>
+</html>

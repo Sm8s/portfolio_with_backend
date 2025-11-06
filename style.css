@@ -1,0 +1,396 @@
+
+/*
+ * Modern, dark-themed styling for the programming portfolio.
+ * Uses a circuit-board hero image as header background and subtle accent colours.
+ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a192f;
+    color: #ccd6f6;
+}
+
+/* =============================== */
+/* Auth page styling */
+/* These styles apply to the login/registration page. */
+.auth-page header.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-image: url('circuit_bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-page header.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #e6f1ff;
+}
+
+.auth-page header.hero p {
+    font-size: 1.1rem;
+    color: #a8b2d1;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.auth-form {
+    background-color: #112240;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #64ffda;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #233554;
+    border-radius: 4px;
+    background-color: #0a192f;
+    color: #ccd6f6;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #64ffda;
+    color: #0a192f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.auth-form button:hover {
+    background-color: #52cca8;
+}
+
+.auth-form .error {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #112240;
+    color: #8892b0;
+}
+
+/* Hero header with background image and overlay */
+header {
+    position: relative;
+    padding: 4rem 1rem;
+    text-align: center;
+    color: #e6f1ff;
+    background: url('circuit_bg.png') no-repeat center/cover;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 25, 47, 0.85);
+    z-index: 0;
+}
+
+header .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 1.5rem;
+    line-height: 1.5;
+}
+
+header input {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 0;
+    border: none;
+    border-radius: 4px;
+    background: #112240;
+    color: #ccd6f6;
+    box-sizing: border-box;
+}
+
+header input::placeholder {
+    color: #8892b0;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section.level {
+    margin-bottom: 2rem;
+}
+
+section.level h2 {
+    margin-top: 0;
+    color: #64ffda;
+    border-bottom: 2px solid #233554;
+    padding-bottom: 0.5rem;
+}
+
+/* Style level links */
+section.level h2 a {
+    color: #64ffda;
+    text-decoration: none;
+}
+section.level h2 a:hover {
+    text-decoration: underline;
+}
+
+article.task {
+    background-color: #112240;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(2, 12, 27, 0.7);
+    transition: transform 0.2s;
+}
+
+/* Icon markers before each task for completed/pending */
+article.task::before {
+    content: '✓';
+    margin-right: 0.75rem;
+    font-weight: bold;
+    color: #64ffda;
+}
+article.task.todo::before {
+    content: '⌛';
+    color: #ff5c5c;
+}
+
+article.task:hover {
+    transform: translateY(-2px);
+}
+
+article.task.completed {
+    border-left: 4px solid #64ffda;
+}
+
+article.task.todo {
+    border-left: 4px solid #ff5c5c;
+}
+
+article.task h3 {
+    margin-top: 0;
+    color: #e6f1ff;
+}
+
+article.task p {
+    margin-bottom: 0.5rem;
+    color: #8892b0;
+}
+
+article.task a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #64ffda;
+    text-decoration: none;
+}
+
+article.task a:hover {
+    text-decoration: underline;
+}
+
+/* Progress bar styles */
+#progress-section {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+#progress-bar-background {
+    width: 100%;
+    height: 8px;
+    background-color: #233554;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+#progress-bar-fill {
+    height: 100%;
+    width: 0;
+    background-color: #64ffda;
+    transition: width 0.4s ease;
+}
+
+/* Navigation bar for dashboard and tasks */
+.top-nav {
+    background-color: #112240;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8892b0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.top-nav a {
+    color: #64ffda;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard level sections */
+.level-section {
+    margin: 2rem;
+}
+.level-section h2 {
+    color: #64ffda;
+    border-left: 4px solid #64ffda;
+    padding-left: 0.5rem;
+}
+.task-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.task-card {
+    background-color: #112240;
+    padding: 1rem;
+    border-radius: 6px;
+    flex: 1 1 300px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+.task-card h3 {
+    margin-top: 0;
+    color: #e6f1ff;
+}
+.task-card p {
+    color: #8892b0;
+    flex-grow: 1;
+}
+.task-card.task-solved {
+    border-left: 4px solid #64ffda;
+}
+.task-card .task-btn {
+    align-self: flex-start;
+    margin-top: 1rem;
+    background-color: #64ffda;
+    color: #0a192f;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.task-card .task-btn:hover {
+    background-color: #52cca8;
+}
+
+/* Progress bar on dashboard */
+.progress-container {
+    width: 80%;
+    height: 10px;
+    background-color: #233554;
+    border-radius: 5px;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    background-color: #64ffda;
+    transition: width 0.4s ease;
+}
+.progress-text {
+    text-align: center;
+    color: #8892b0;
+}
+
+/* Neue Stilklassen fuer Bereichssektionen auf dem Dashboard */
+.area-section {
+    margin: 3rem 0;
+}
+.area-header h2 {
+    margin-top: 0;
+    color: #64ffda;
+}
+.area-desc {
+    color: #8892b0;
+    margin: 0.2rem 0;
+}
+.area-progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #233554;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+.area-progress-bar {
+    height: 100%;
+    background-color: #64ffda;
+    transition: width 0.4s ease;
+}
+.task-badge {
+    display: inline-block;
+    background-color: #233554;
+    color: #8892b0;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Fade‑In Animation fuer Task Cards */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#progress-text {
+    color: #8892b0;
+    font-size: 0.9rem;
+    text-align: right;
+}

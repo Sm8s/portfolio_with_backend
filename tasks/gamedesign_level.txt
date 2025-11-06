@@ -1,0 +1,10 @@
+Level‑Design Beispiel
+
+**Levelstruktur:**
+Das Level beginnt in einem kleinen Dorf am Waldrand. Der Spieler startet am Dorfplatz, ausgestattet mit einer einfachen Waffe. Ziel ist es, den Wald zu durchqueren und den geheimnisvollen Tempel am anderen Ende zu erreichen.
+
+**Hindernisse und Gegner:**
+Auf dem Weg lauern Fallen wie einstürzende Brücken und Stachelgruben. Zwischen den Bäumen patrouillieren wilde Tiere und feindliche Banditen. Im Tempel selbst warten knifflige Rätsel und ein Endgegner.
+
+**Routen und Geheimnisse:**
+Es gibt mehrere optionale Wege: Ein gefährlicher Pfad führt an einer Schlucht entlang, bietet aber wertvolle Schätze. Ein anderer Umweg führt zu einer heilenden Quelle. Versteckte Bereiche belohnen neugierige Spieler mit Bonus‑Items.

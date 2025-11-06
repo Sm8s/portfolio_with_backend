@@ -25,7 +25,7 @@ if (!$area) {
 }
 
 // Aufgaben dieses Bereichs laden
-$stmtTasks = $pdo->prepare('SELECT * FROM tasks WHERE area_id = ? ORDER BY difficulty, id');
+$stmtTasks = $pdo->prepare('SELECT * FROM tasks WHERE area_id = ? AND (is_active IS NULL OR is_active = TRUE) ORDER BY difficulty, id');
 $stmtTasks->execute([$areaId]);
 $tasks = $stmtTasks->fetchAll();
 

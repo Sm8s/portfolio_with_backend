@@ -25,7 +25,7 @@ foreach ($progressRows as $p) {
 $areaStats = [];
 foreach ($areas as $area) {
     // Zähle Aufgaben dieses Bereichs
-    $stmtTasks = $pdo->prepare('SELECT id FROM tasks WHERE area_id = ?');
+    $stmtTasks = $pdo->prepare('SELECT id FROM tasks WHERE area_id = ? AND (is_active IS NULL OR is_active = TRUE)');
     $stmtTasks->execute([$area['id']]);
     $tasks = $stmtTasks->fetchAll();
     $taskCount = count($tasks);

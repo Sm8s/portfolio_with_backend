@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS tasks (
   description TEXT NOT NULL,
   hint TEXT,
   solution_file VARCHAR(255),
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
   CONSTRAINT fk_area FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
 );
 

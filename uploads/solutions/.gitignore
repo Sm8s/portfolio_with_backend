@@ -1,0 +1,3 @@
+# Store uploaded solution files outside of version control
+*
+!.gitignore

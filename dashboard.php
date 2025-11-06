@@ -8,8 +8,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Hole alle Aufgaben zusammen mit ihrem Bereich (Area) und sortiere sie nach Bereich und Schwierigkeit
-$stmt = $pdo->prepare('SELECT t.*, a.name AS area_name, a.strengths, a.weaknesses FROM tasks t JOIN areas a ON t.area_id = a.id ORDER BY a.id, t.difficulty, t.id');
+// Hole alle aktiven Aufgaben zusammen mit ihrem Bereich (Area) und sortiere sie nach Bereich und Schwierigkeit
+$stmt = $pdo->prepare('SELECT t.*, a.name AS area_name, a.strengths, a.weaknesses FROM tasks t JOIN areas a ON t.area_id = a.id WHERE (t.is_active IS NULL OR t.is_active = TRUE) ORDER BY a.id, t.difficulty, t.id');
 $stmt->execute();
 $tasks = $stmt->fetchAll();
 

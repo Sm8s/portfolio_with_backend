@@ -14,8 +14,8 @@ if ($taskId <= 0) {
     exit;
 }
 
-// Fetch task info including area name
-$stmt = $pdo->prepare('SELECT t.*, a.name AS area_name FROM tasks t JOIN areas a ON t.area_id = a.id WHERE t.id = ?');
+// Fetch task info including area name (only active tasks sichtbar)
+$stmt = $pdo->prepare('SELECT t.*, a.name AS area_name FROM tasks t JOIN areas a ON t.area_id = a.id WHERE t.id = ? AND (t.is_active IS NULL OR t.is_active = TRUE)');
 $stmt->execute([$taskId]);
 $task = $stmt->fetch();
 if (!$task) {
@@ -49,7 +49,7 @@ if (isset($_POST['mark_solved']) && !$isSolved) {
 $solutionContent = '';
 $comparisonHtml = '';
 if ($isSolved && $task['solution_file']) {
-    $filePath = __DIR__ . '/' . $task['solution_file'];
+    $filePath = __DIR__ . '/' . ltrim($task['solution_file'], '/');
     if (file_exists($filePath)) {
         // Raw solution code (no escaping yet)
         $rawSolution = file_get_contents($filePath);
